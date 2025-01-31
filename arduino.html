@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Page d'accueil de mon portfolio</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Arial", Times, serif;
+        }
+        body {
+            background-color: rgb(245, 233, 253);
+            margin: 0;
+            padding: 0;
+        }
+        .banner {
+            background-image: url(bannière.png);
+            height: 20vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .banner::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        .portfolio-title {
+            font-size: 3.5em;
+            color: white;
+            z-index: 1;
+            position: relative;
+        }
+        .w3-bar {
+            margin: 0;
+            padding: 0;
+        }
+        .w3-bar a {
+            transition: all 0.3s ease;
+        }
+        .w3-bar a:hover {
+            background-color: #6200ea;
+            color: white;
+        }
+        .content-section {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 900px;
+            background-color: white;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .content-section img {
+            width: 100%;
+            max-width: 300px;
+            margin: 10px auto;
+            cursor: zoom-in;
+        }
+        .program-description {
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+        .card {
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        /* Styles pour la modale */
+        .modal {
+            display: none; /* Cacher la modale par défaut */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+        .modal-content:hover {
+            cursor: zoom-out;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="banner">
+        <div class="w3-container w3-center">
+         <h1 class="w3-center w3-animate-top portfolio-title">Mon Portfolio</h1>
+        </div>
+      </div>
+
+<div class="w3-bar w3-black">
+    <a href="Page d'accueil.html" class="w3-bar-item w3-button">Accueil</a>
+    <a href="Projet1.html" class="w3-bar-item w3-button">Projet 1</a>
+    <a href="Projet2.html" class="w3-bar-item w3-button">Projet 2</a>
+    <a href="projet3.html" class="w3-bar-item w3-button">Projet 3</a>
+    <a href="arduino.html" class="w3-bar-item w3-button">Arduino</a>
+    <a href="essaiepagepython.html" class="w3-bar-item w3-button">Python</a>
+</div>
+
+<div class="content-section">
+    <h2 class="w3-text-black w3-padding-16">
+        <i class="fas fa-code w3-margin-right"></i>Arduino
+    </h2>
+    <div class="w3-center">
+        <img id="arduino" src="arduino.png" alt="Code Python"  style="width: 20%;">
+    </div>
+   
+    <p class="program-description">
+      Arduino est une plateforme open-source qui combine une carte électronique programmable et un langage basé sur le C++. Elle permet de créer facilement des projets interactifs en programmant des composants comme des LED, capteurs ou moteurs. Le code Arduino repose sur deux fonctions principales : setup() pour l'initialisation et loop() pour exécuter des actions en boucle. Simple et accessible, elle est idéale pour apprendre l'électronique et le codage.
+
+    </p>
+    <h3>Une multitude de possibilités :</h3>
+    <ul>
+        <li>Contrôle de robots mobiles</li>
+        <li>Arrosage intelligent, capteurs à distance...</li>
+        <li>Station météo, enregistreur de données</li>
+    </ul>
+
+    <div class="card">
+        <h4>Exemple : feux de signalisation</h4>
+        <div class="w3-center">
+            <img id="codePythonImage" src="Code arduino.png" alt="Code arduino" >
+        </div>
+        <div class="w3-center">
+          <img id="codePythonImage" src="Code arduino2.png" alt="Code arduino" >
+      </div>
+      <div class="w3-center">
+        <img id="codePythonImage" src="Code arduino3.png" alt="Code arduino" >
+    </div>
+    <div class="w3-center">
+      <img id="codePythonImage" src="fin code arduino.png" alt="Code arduino" >
+  </div>
+        <p>
+          Ce code contrôle un système de feux de signalisation avec Arduino. Il alterne les feux rouges, jaunes et verts pour deux directions, tout en gérant les LED pour piétons. Les délais simulent les phases de circulation.
+        </p>
+    </div>
+</div>
+
+<!-- La modale -->
+<div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
+</div>
+
+<script>
+    // Obtenez les éléments
+    var modal = document.getElementById("imageModal");
+    var img = document.getElementById("codePythonImage");
+    var modalImg = document.getElementById("modalImage");
+    var close = document.getElementsByClassName("close")[0];
+
+    // Lorsque l'image est cliquée
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+    };
+
+    // Lorsque l'utilisateur clique sur la croix
+    close.onclick = function () {
+        modal.style.display = "none";
+    };
+
+    // Fermer la modale si l'utilisateur clique à l'extérieur de l'image
+    modal.onclick = function (e) {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+</script>
+
+</body>
+</html>
